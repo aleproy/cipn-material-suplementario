@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Material suplementario · CIPN y ejercicio terapéutico</title>
+<meta name="description" content="Material suplementario del resumen presentado en el V Congreso Internacional de Fisioterapia COFISPA 2026: codificación de los tres ejes, ecuaciones de búsqueda, diagrama PRISMA-ScR y bibliografía recomendada.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --paper: #f6f4ee;
+    --paper-raised: #ffffff;
+    --ink: #1d2320;
+    --ink-secondary: #4b5650;
+    --ink-muted: #7a847d;
+    --border: #d9d4c6;
+    --border-strong: #b8b19f;
+    --accent: #b5762a;
+    --accent-ink: #ffffff;
+    --code-bg: #ece7d9;
+
+    --d1: #0e8a82;
+    --d2: #c65b3f;
+    --d3: #c89422;
+    --d4: #2f5fb0;
+    --d5: #7a5a9e;
+
+    --sys: #8a8272;
+    --direct: #2f5fb0;
+
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #16181a;
+      --paper-raised: #1e2124;
+      --ink: #ece9e2;
+      --ink-secondary: #b7beb8;
+      --ink-muted: #8b948d;
+      --border: #33373a;
+      --border-strong: #474c4f;
+      --accent: #e0a45c;
+      --accent-ink: #1d1305;
+      --code-bg: #232628;
+
+      --d1: #3fb8ae;
+      --d2: #e08468;
+      --d3: #e0b850;
+      --d4: #7ea1e0;
+      --d5: #ad8fd4;
+
+      --sys: #a29a89;
+      --direct: #7ea1e0;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #16181a;
+    --paper-raised: #1e2124;
+    --ink: #ece9e2;
+    --ink-secondary: #b7beb8;
+    --ink-muted: #8b948d;
+    --border: #33373a;
+    --border-strong: #474c4f;
+    --accent: #e0a45c;
+    --accent-ink: #1d1305;
+    --code-bg: #232628;
+
+    --d1: #3fb8ae;
+    --d2: #e08468;
+    --d3: #e0b850;
+    --d4: #7ea1e0;
+    --d5: #ad8fd4;
+
+    --sys: #a29a89;
+    --direct: #7ea1e0;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { padding: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 8px 48px;
+  }
+
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; text-wrap: balance; letter-spacing: -0.01em; }
+
+  header.top {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .top-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 14px 20px 0;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 4px;
+  }
+
+  h1.title {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: var(--ink);
+  }
+
+  .subtitle {
+    color: var(--ink-secondary);
+    font-size: 13.5px;
+    margin: 0 0 14px;
+    max-width: 60ch;
+  }
+
+  nav.tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+  }
+
+  nav.tabs button {
+    appearance: none;
+    border: none;
+    background: var(--paper-raised);
+    color: var(--ink-secondary);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 10px 4px;
+    cursor: pointer;
+    line-height: 1.25;
+  }
+
+  nav.tabs button[aria-selected="true"] {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  nav.tabs button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+
+  section.panel { display: none; padding-top: 24px; }
+  section.panel[data-active="true"] { display: block; }
+
+  p { color: var(--ink-secondary); }
+  p.lead { color: var(--ink); font-size: 15.5px; }
+
+  .quote {
+    border-left: 2px solid var(--accent);
+    padding-left: 14px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--ink-secondary);
+    font-size: 14px;
+  }
+
+  h2 { font-size: 19px; margin: 0 0 6px; }
+  h3 {
+    font-size: 13px;
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    color: var(--ink-secondary);
+    margin: 28px 0 10px;
+  }
+  h3:first-of-type { margin-top: 18px; }
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  thead th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    background: var(--paper-raised);
+    white-space: nowrap;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--paper-raised); }
+  td.code, th.code { font-family: 'IBM Plex Mono', monospace; white-space: nowrap; }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .dot.d1 { background: var(--d1); } .dot.d2 { background: var(--d2); }
+  .dot.d3 { background: var(--d3); } .dot.d4 { background: var(--d4); }
+  .dot.d5 { background: var(--d5); }
+
+  .note {
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    margin: 8px 0 0;
+    line-height: 1.5;
+  }
+  .note b, .note strong { color: var(--ink-secondary); }
+
+  /* Matrix */
+  .matrix-wrap { margin-top: 10px; }
+  table.matrix td, table.matrix th { text-align: center; padding: 8px 6px; }
+  table.matrix th.rowhead { text-align: left; }
+  table.matrix td.cell {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    cursor: default;
+    border-radius: 4px;
+  }
+  table.matrix td.cell.hit {
+    cursor: pointer;
+    color: var(--accent-ink);
+  }
+  table.matrix td.cell.hit:hover,
+  table.matrix td.cell.hit:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  table.matrix td.cell.zero { color: var(--border-strong); }
+
+  .detail-box {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: var(--paper-raised);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--ink-secondary);
+    min-height: 20px;
+  }
+  .detail-box b { color: var(--ink); }
+
+  .finding {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border: 1px solid var(--border-strong);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    font-size: 13.5px;
+    background: var(--paper-raised);
+  }
+
+  /* Equations */
+  .eq-concept {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 10px 0 20px;
+  }
+
+  details.block {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: var(--paper-raised);
+    overflow: hidden;
+  }
+  details.block[open] { padding-bottom: 4px; }
+  details.block summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 12px 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  details.block summary::-webkit-details-marker { display: none; }
+  details.block summary .letter {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    width: 22px; height: 22px;
+    display: inline-flex; align-items: center; justify-content: center;
+    flex: none;
+  }
+  details.block summary .n {
+    margin-left: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-muted);
+    white-space: nowrap;
+  }
+  .block-body { padding: 0 14px 14px; }
+  .eq-row { position: relative; }
+  .eq-code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 42px 10px 12px;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 6px 0;
+  }
+  .copy-btn {
+    position: absolute;
+    top: 12px; right: 6px;
+    background: var(--paper-raised);
+    border: 1px solid var(--border-strong);
+    color: var(--ink-secondary);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 4px 6px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .copy-btn:hover { color: var(--ink); border-color: var(--ink); }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--ink-muted); margin-top: 4px; }
+  .meta-row b { color: var(--ink-secondary); font-weight: 500; }
+
+  /* Mermaid container */
+  .diagram-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--paper-raised);
+    padding: 12px;
+  }
+  .mermaid { margin: 0; min-width: 420px; }
+
+  /* Bibliography */
+  ol.biblio { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  ol.biblio li {
+    display: flex;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  ol.biblio li:last-child { border-bottom: none; padding-bottom: 0; }
+  .num {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--accent);
+    font-size: 13px;
+    flex: none;
+    width: 18px;
+    padding-top: 1px;
+  }
+  .ref-text { font-size: 13.5px; color: var(--ink-secondary); }
+  .ref-text .doi {
+    display: inline-block;
+    margin-top: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--direct);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--direct);
+  }
+  .ref-text .doi:hover { border-bottom-style: solid; }
+
+  footer {
+    margin-top: 36px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+
+  a { color: var(--direct); }
+
+  @media (max-width: 460px) {
+    nav.tabs button { font-size: 11px; padding: 9px 2px; }
+    table.matrix { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <p class="eyebrow">Material suplementario</p>
+    <h1 class="title">Mecanismos periféricos del ejercicio en CIPN</h1>
+    <p class="subtitle">Scoping Review PRISMA-ScR · V Congreso Internacional de Fisioterapia COFISPA 2026 · Alejandro Proy Acosta, Cristina López Camacho</p>
+    <nav class="tabs" role="tablist" aria-label="Secciones">
+      <button role="tab" aria-selected="true" data-tab="ejes">Codificación</button>
+      <button role="tab" aria-selected="false" data-tab="ecuaciones">Ecuaciones</button>
+      <button role="tab" aria-selected="false" data-tab="prisma">Diagrama</button>
+      <button role="tab" aria-selected="false" data-tab="biblio">Bibliografía</button>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ================= SECCIÓN 1: EJES ================= -->
+  <section class="panel" data-active="true" id="panel-ejes">
+    <h2>Codificación de los tres ejes</h2>
+    <p class="lead">Cada hallazgo del núcleo se codifica en tres ejes independientes — no son tres listas paralelas, sino tres roles que un mismo constructo biológico puede desempeñar a la vez.</p>
+    <p class="quote">«A biomarker can be considered a measurement on mechanistic pathways (i.e., a mediator)» — Chung et al. 2022, §5</p>
+
+    <h3>Eje dominio — contenido biológico</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th class="code">Código</th><th>Dominio</th><th>Ejemplos de constructos</th></tr></thead>
+        <tbody>
+          <tr><td class="code"><span class="chip"><span class="dot d1"></span>D1</span></td><td>Factores neurotróficos</td><td>GDNF, BDNF, IGF-1, NGF</td></tr>
+          <tr><td class="code"><span class="chip"><span class="dot d2"></span>D2</span></td><td>Inflamación y citocinas</td><td>IL-1β, IL-10, TNF-α, IFNγ, IL-6, IL-1RA</td></tr>
+          <tr><td class="code"><span class="chip"><span class="dot d3"></span>D3</span></td><td>Bioenergética mitocondrial y estrés oxidativo</td><td>ATP, biogénesis, mtDNA, citrato sintasa, cadena respiratoria, ROS</td></tr>
+          <tr><td class="code"><span class="chip"><span class="dot d4"></span>D4</span></td><td>Integridad y regeneración axonal</td><td>IENF, conducción nerviosa, brotación, degeneración, SARM1</td></tr>
+          <tr><td class="code"><span class="chip"><span class="dot d5"></span>D5</span></td><td>Canales iónicos y transducción periférica</td><td>Piezo1/2, TRPV1, TRPA1, TRPM8, ASIC, Nav1.7/1.8</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Eje rol — qué hace el estudio con ese dominio</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th class="code">Código</th><th>Rol epistémico</th></tr></thead>
+        <tbody>
+          <tr><td class="code">R0</td><td>Postulado narrativamente, sin medición</td></tr>
+          <tr><td class="code">R1</td><td>Medido como resultado mecanístico (cambio biológico, sin vincularlo al síntoma)</td></tr>
+          <tr><td class="code">R2</td><td>Medido y asociado al desenlace CIPN (correlación/regresión, sin test de mediación)</td></tr>
+          <tr><td class="code">R3</td><td>Evaluado formalmente como mediador (análisis de mediación, SEM, efecto indirecto)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Marcadores de biomarcador, no excluyentes con R0–R3:</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th class="code">Código</th><th>Marcador de biomarcador</th></tr></thead>
+        <tbody>
+          <tr><td class="code">B1</td><td>Propuesto como biomarcador</td></tr>
+          <tr><td class="code">B2</td><td>Validado analítica o psicométricamente</td></tr>
+          <tr><td class="code">B3</td><td>Evaluado como predictor de respuesta a la intervención</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Eje compartimento — dónde se mide</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th class="code">Código</th><th>Compartimento</th><th>Naturaleza</th></tr></thead>
+        <tbody>
+          <tr><td class="code">C1</td><td>Nervio periférico</td><td>Periférico directo</td></tr>
+          <tr><td class="code">C2</td><td>Ganglio de la raíz dorsal (DRG)</td><td>Periférico directo</td></tr>
+          <tr><td class="code">C3</td><td>Piel / IENF</td><td>Periférico directo</td></tr>
+          <tr><td class="code">C4</td><td>Suero / plasma</td><td>Sistémico — nunca evidencia de cambio en el nervio</td></tr>
+          <tr><td class="code">C5</td><td>Músculo esquelético</td><td>Sistémico — nunca evidencia de cambio en el nervio</td></tr>
+          <tr><td class="code">C6</td><td>Sistema nervioso central</td><td>Excluido del alcance de la revisión</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Matriz de cobertura — dominio × rol</h3>
+    <p class="note">Toca o pasa el ratón por una celda con valor para ver qué estudio(s) del núcleo la sustentan.</p>
+    <div class="matrix-wrap">
+      <div class="table-scroll">
+        <table class="matrix" id="matrix-rol">
+          <thead>
+            <tr><th class="rowhead">Dominio</th><th>R0</th><th>R1</th><th>R2</th><th>R3</th><th>B1</th><th>B2</th><th>B3</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="rowhead"><span class="chip"><span class="dot d1"></span>D1</span></th>
+              <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
+              <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
+            </tr>
+            <tr>
+              <th class="rowhead"><span class="chip"><span class="dot d2"></span>D2</span></th>
+              <td class="cell zero">0</td>
+              <td class="cell hit" style="background:var(--d2)" tabindex="0" data-detail="D2 · R1 — medido: Martín-Sánchez_2026, Viganò_2024, Galantino_2019*">3</td>
+              <td class="cell zero">0</td><td class="cell zero">0</td>
+              <td class="cell hit" style="background:var(--d2)" tabindex="0" data-detail="D2 · B1 — propuesto como biomarcador: Martín-Sánchez_2026, Viganò_2024, Galantino_2019*">3</td>
+              <td class="cell zero">0</td><td class="cell zero">0</td>
+            </tr>
+            <tr>
+              <th class="rowhead"><span class="chip"><span class="dot d3"></span>D3</span></th>
+              <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
+              <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
+            </tr>
+            <tr>
+              <th class="rowhead"><span class="chip"><span class="dot d4"></span>D4</span></th>
+              <td class="cell zero">0</td>
+              <td class="cell hit" style="background:var(--d4)" tabindex="0" data-detail="D4 · R1 — medido: Dhawan_2020†, Park_2015, Sekaran_2025, McCrary_2019, Streckmann_2019">5</td>
+              <td class="cell zero">0</td><td class="cell zero">0</td>
+              <td class="cell zero">0</td><td class="cell zero">0</td>
+              <td class="cell hit" style="background:var(--d4)" tabindex="0" data-detail="D4 · B3 — predictor de respuesta a la intervención: Sekaran_2025">1</td>
+            </tr>
+            <tr>
+              <th class="rowhead"><span class="chip"><span class="dot d5"></span>D5</span></th>
+              <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
+              <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="detail-box" id="detail-rol">Selecciona una celda con valor para ver los estudios que la componen.</div>
+    </div>
+    <p class="note">*Galantino_2019 codifica D2 «con reserva» (cortisol salival, no es una citocina clásica). †Dhawan_2020: la conducción nerviosa es solo diagnóstico basal, sin rol real de resultado del ejercicio.</p>
+
+    <h3>Matriz de cobertura — dominio × compartimento</h3>
+    <div class="matrix-wrap">
+      <div class="table-scroll">
+        <table class="matrix" id="matrix-comp">
+          <thead>
+            <tr><th class="rowhead">Dominio</th><th>C1 Nervio</th><th>C2 DRG</th><th>C3 Piel/IENF</th><th>C4 Suero</th><th>C5 Músculo</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="rowhead"><span class="chip"><span class="dot d1"></span>D1</span></th>
+              <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
+            </tr>
+            <tr>
+              <th class="rowhead"><span class="chip"><span class="dot d2"></span>D2</span></th>
+              <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
+              <td class="cell hit" style="background:var(--d2)" tabindex="0" data-detail="D2 · C4 (suero/plasma) — sistémico: Martín-Sánchez_2026, Viganò_2024, Galantino_2019*">3</td>
+              <td class="cell zero">0</td>
+            </tr>
+            <tr>
+              <th class="rowhead"><span class="chip"><span class="dot d3"></span>D3</span></th>
+              <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
+            </tr>
+            <tr>
+              <th class="rowhead"><span class="chip"><span class="dot d4"></span>D4</span></th>
+              <td class="cell hit" style="background:var(--d4)" tabindex="0" data-detail="D4 · C1 (nervio periférico) — directo: Dhawan_2020, Park_2015, Sekaran_2025, McCrary_2019, Streckmann_2019">5</td>
+              <td class="cell zero">0</td>
+              <td class="cell hit" style="background:var(--d4)" tabindex="0" data-detail="D4 · C3 (piel/IENF) — directo: Park_2015">1</td>
+              <td class="cell zero">0</td><td class="cell zero">0</td>
+            </tr>
+            <tr>
+              <th class="rowhead"><span class="chip"><span class="dot d5"></span>D5</span></th>
+              <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="detail-box" id="detail-comp">Selecciona una celda con valor para ver los estudios que la componen.</div>
+    </div>
+
+    <div class="finding">
+      <b>Hallazgo:</b> con el núcleo actual de 10 estudios, ningún dominio supera R1 — ningún hallazgo llega a asociarse formalmente al desenlace clínico (R2) ni a un análisis de mediación (R3). D1, D3 y D5 están completamente vacíos. Toda la evidencia de D2 es además sistémica (C4), no hay ningún dato de inflamación medido en el nervio, la piel o el DRG.
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 2: ECUACIONES ================= -->
+  <section class="panel" id="panel-ecuaciones">
+    <h2>Ecuaciones de búsqueda</h2>
+    <p class="lead">PubMed y Cochrane Library, por bloques de intersección. Bloques A y C: 2015–2026. Bloque B: 2021–2026 (el hueco 2015–2020 se cubre con rastreo de citas). Inglés o español en los tres.</p>
+
+    <h3>Concepto CIPN — común a los bloques A, B y C</h3>
+    <div class="eq-concept" id="eq-concept">"Chemotherapy-Induced Peripheral Neuropathy" OR "chemotherapy induced peripheral neuropathy" OR "chemotherapy-induced neuropathy" OR CIPN OR (("Peripheral Nervous System Diseases/chemically induced"[Mesh] OR "peripheral neuropath*" OR polyneuropath*) AND ("Antineoplastic Agents"[Mesh] OR chemotherap* OR antineoplastic* OR neurotoxic chemotherap*))</div>
+
+    <details class="block" open>
+      <summary><span class="letter">A</span> CIPN y ejercicio terapéutico <span class="n">708 registros</span></summary>
+      <div class="block-body">
+        <div class="eq-row">
+          <div class="eq-code" id="eq-a">"Exercise Therapy"[Mesh] OR "Exercise"[Mesh] OR "Physical Therapy Modalities"[Mesh] OR exercis* OR "physical activit*" OR "physical training" OR "aerobic training" OR "resistance training" OR strength training OR physiotherap* OR rehabilitation OR balance training OR sensorimotor training OR yoga</div>
+          <button class="copy-btn" data-copy-target="eq-a">copiar</button>
+        </div>
+        <div class="meta-row">
+          <span><b>Filtros</b> 2015/01/01–2026/08/08 · inglés/español</span>
+          <span><b>Registros</b> PubMed 399 + Cochrane 309 = 708</span>
+        </div>
+      </div>
+    </details>
+
+    <details class="block">
+      <summary><span class="letter">B</span> CIPN y dominios D1–D5 <span class="n">589 registros</span></summary>
+      <div class="block-body">
+        <div class="eq-row">
+          <div class="eq-code" id="eq-b">"Ganglia, Spinal"[Mesh] OR "Peripheral Nerves"[Mesh] OR "Biomarkers"[Mesh] OR "Inflammation Mediators"[Mesh] OR "Oxidative Stress"[Mesh] OR "Mitochondria"[Mesh] OR "dorsal root gangli*" OR DRG OR "peripheral nerve*" OR "intraepidermal nerve fiber*" OR "nerve conduction" OR neurotroph* OR BDNF OR GDNF OR "insulin-like growth factor" OR cytokine* OR inflammation OR "oxidative stress" OR mitochondrial OR axon* OR "ion channel*" OR Piezo OR TRPV OR TRPA OR TRPM OR ASIC OR biomarker* OR "neurofilament light"</div>
+          <button class="copy-btn" data-copy-target="eq-b">copiar</button>
+        </div>
+        <div class="meta-row">
+          <span><b>Filtros</b> 2021/01/01–2026/08/08 · inglés/español</span>
+          <span><b>Registros</b> PubMed 106 + Cochrane 483 = 589</span>
+        </div>
+        <p class="note">Sin ancla de compartimento: se probó como filtro y se descartó por excluir evidencia sistémica C4–C5, que el diseño admite como indirecta, no como excluible. La compartimentación se aplica solo en la ficha de extracción.</p>
+      </div>
+    </details>
+
+    <details class="block">
+      <summary><span class="letter">C</span> CIPN, ejercicio y mediación formal <span class="n">2 registros</span></summary>
+      <div class="block-body">
+        <div class="eq-row">
+          <div class="eq-code" id="eq-c">("Exercise"[Mesh] OR "Exercise Therapy"[Mesh] OR exercis* OR "physical activit*" OR "sensorimotor training") AND ("Mediation Analysis"[Mesh] OR "mediation analysis" OR "causal mediation" OR "indirect effect*" OR "structural equation model*" OR "mediator of" OR "mediating role")</div>
+          <button class="copy-btn" data-copy-target="eq-c">copiar</button>
+        </div>
+        <div class="meta-row">
+          <span><b>Filtros</b> sin restricción de fecha · inglés/español</span>
+          <span><b>Registros</b> PubMed 2 + Cochrane 0 = 2</span>
+        </div>
+        <p class="note">Ecuación deliberadamente estrecha, usada como sonda de R3. Los 2 registros brutos son falsos positivos tras cribado manual — confirma formalmente <b>R3 = 0</b>, el hallazgo principal previsto de la revisión.</p>
+      </div>
+    </details>
+
+    <p class="note" style="margin-top:16px">Complementado con rastreo de citas hacia adelante/atrás de 5 artículos de referencia (49 registros). Tras deduplicar: 1.348 → <b>1.199 registros únicos</b> (149 duplicados eliminados).</p>
+  </section>
+
+  <!-- ================= SECCIÓN 3: PRISMA ================= -->
+  <section class="panel" id="panel-prisma">
+    <h2>Diagrama de flujo PRISMA-ScR</h2>
+    <p class="lead">Cubre únicamente el núcleo (Nivel 1); la revisión lateral, no sistemática, queda fuera por definición.</p>
+    <div class="diagram-wrap">
+<pre class="mermaid">
+flowchart TD
+    A["Registros identificados mediante búsqueda en bases de datos&lt;br/&gt;PubMed + Cochrane, Bloques A/B/C (708+589+2)&lt;br/&gt;&lt;b&gt;n = 1.299&lt;/b&gt;"] --> C
+    B["Registros identificados mediante otras fuentes&lt;br/&gt;Rastreo de citas de 5 artículos de referencia&lt;br/&gt;&lt;b&gt;n = 49&lt;/b&gt;"] --> C
+    C["Registros combinados antes de deduplicar&lt;br/&gt;&lt;b&gt;n = 1.299 + 49 = 1.348&lt;/b&gt;"] --> D
+    D["Duplicados eliminados&lt;br/&gt;85 internos por bloque + 64 entre bloques/fuentes&lt;br/&gt;&lt;b&gt;n = 149&lt;/b&gt;"] --> E
+    E["Registros cribados por título/resumen&lt;br/&gt;&lt;b&gt;n = 1.199&lt;/b&gt;"] --> F
+    E --> G["Registros excluidos&lt;br/&gt;&lt;b&gt;n = 1.142&lt;/b&gt;"]
+    F["Artículos a texto completo evaluados para elegibilidad&lt;br/&gt;&lt;b&gt;n = 57&lt;/b&gt;"] --> H
+    F --> I["Artículos a texto completo excluidos, con razones&lt;br/&gt;&lt;b&gt;n = 47&lt;/b&gt;"]
+    H["Estudios incluidos en la scoping review&lt;br/&gt;&lt;b&gt;n = 10&lt;/b&gt;"]
+</pre>
+    </div>
+    <p class="note">Un CSV compatible con la herramienta oficial de generación de diagramas PRISMA 2020 (paquete R <span style="font-family:'IBM Plex Mono',monospace">PRISMA2020</span>) reproduce las mismas cifras y terminología, con la estructura de cajas más granular de la plantilla oficial.</p>
+  </section>
+
+  <!-- ================= SECCIÓN 4: BIBLIOGRAFÍA ================= -->
+  <section class="panel" id="panel-biblio">
+    <h2>Bibliografía recomendada</h2>
+    <p class="lead">El núcleo de la revisión son 10 estudios incluidos; la bibliografía normativa del resumen y del póster se limita, por decisión editorial, a los 8 de ellos citados en el texto de Resultados. Estas 5 referencias adicionales dan el contexto que el Comité Científico pidió respaldar — prevalencia, tratamiento farmacológico, marco conceptual del campo, riesgo de alcance central y la extensión metodológica PRISMA-ScR — sin ocupar espacio en el póster.</p>
+
+    <ol class="biblio">
+      <li>
+        <span class="num">1</span>
+        <span class="ref-text">Seretny M, Currie GL, Sena ES, Ramnarine S, Grant R, MacLeod MR, et al. Incidence, prevalence, and predictors of chemotherapy-induced peripheral neuropathy: a systematic review and meta-analysis. Pain. 2014;155(12):2461-70.<br><a class="doi" href="https://doi.org/10.1016/j.pain.2014.09.020" target="_blank" rel="noopener">doi.org/10.1016/j.pain.2014.09.020</a></span>
+      </li>
+      <li>
+        <span class="num">2</span>
+        <span class="ref-text">Loprinzi CL, Lacchetti C, Bleeker J, Cavaletti G, Chauhan C, Hertz DL, et al. Prevention and Management of Chemotherapy-Induced Peripheral Neuropathy in Survivors of Adult Cancers: ASCO Guideline Update. J Clin Oncol. 2020;38(28):3325-48.<br><a class="doi" href="https://doi.org/10.1200/JCO.20.01399" target="_blank" rel="noopener">doi.org/10.1200/JCO.20.01399</a></span>
+      </li>
+      <li>
+        <span class="num">3</span>
+        <span class="ref-text">Chung KH, Park SB, Streckmann F, Wiskemann J, Mohile N, Kleckner AS, et al. Mechanisms, Mediators, and Moderators of the Effects of Exercise on Chemotherapy-Induced Peripheral Neuropathy. Cancers (Basel). 2022;14(5):1224.<br><a class="doi" href="https://doi.org/10.3390/cancers14051224" target="_blank" rel="noopener">doi.org/10.3390/cancers14051224</a></span>
+      </li>
+      <li>
+        <span class="num">4</span>
+        <span class="ref-text">Loureiro J, Costa-Pereira JT, Pozza DH, Tavares I. The Power of Movement: How Exercise Influences Chemotherapy-Induced Peripheral Neuropathy. Biomedicines. 2025;13(5):1103.<br><a class="doi" href="https://doi.org/10.3390/biomedicines13051103" target="_blank" rel="noopener">doi.org/10.3390/biomedicines13051103</a></span>
+      </li>
+      <li>
+        <span class="num">5</span>
+        <span class="ref-text">Tricco AC, Lillie E, Zarin W, O'Brien KK, Colquhoun H, Levac D, et al. PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation. Ann Intern Med. 2018;169(7):467-73.<br><a class="doi" href="https://doi.org/10.7326/M18-0850" target="_blank" rel="noopener">doi.org/10.7326/M18-0850</a></span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    Material suplementario del resumen presentado en el V Congreso Internacional de Fisioterapia COFISPA 2026. Contenido derivado sin alterar de <span style="font-family:'IBM Plex Mono',monospace">01_Protocolo</span>, <span style="font-family:'IBM Plex Mono',monospace">03_Busqueda_bibliografica</span> y <span style="font-family:'IBM Plex Mono',monospace">04_Cribado_seleccion</span> del proyecto de revisión; cualquier corrección se hace primero en la fuente.
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js"></script>
+<script>
+(function () {
+  var darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
+  mermaid.initialize({
+    startOnLoad: true,
+    securityLevel: 'loose',
+    theme: darkMedia.matches ? 'dark' : 'default',
+    themeVariables: { fontFamily: 'IBM Plex Sans, sans-serif' }
+  });
+
+  var tabs = document.querySelectorAll('nav.tabs button');
+  var panels = {
+    ejes: document.getElementById('panel-ejes'),
+    ecuaciones: document.getElementById('panel-ecuaciones'),
+    prisma: document.getElementById('panel-prisma'),
+    biblio: document.getElementById('panel-biblio')
+  };
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabs.forEach(function (b) { b.setAttribute('aria-selected', 'false'); });
+      btn.setAttribute('aria-selected', 'true');
+      Object.keys(panels).forEach(function (k) { panels[k].removeAttribute('data-active'); });
+      panels[btn.dataset.tab].setAttribute('data-active', 'true');
+      window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    });
+  });
+
+  function wireMatrix(tableId, boxId) {
+    var table = document.getElementById(tableId);
+    var box = document.getElementById(boxId);
+    if (!table || !box) return;
+    table.querySelectorAll('td.cell.hit').forEach(function (cell) {
+      cell.addEventListener('click', function () { box.innerHTML = '<b>' + cell.dataset.detail.split(' — ')[0] + '</b> — ' + cell.dataset.detail.split(' — ')[1]; });
+      cell.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); cell.click(); } });
+    });
+  }
+  wireMatrix('matrix-rol', 'detail-rol');
+  wireMatrix('matrix-comp', 'detail-comp');
+
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = document.getElementById(btn.dataset.copyTarget);
+      var text = target ? target.textContent : '';
+      var done = function () { var prev = btn.textContent; btn.textContent = 'copiado'; setTimeout(function () { btn.textContent = prev; }, 1400); };
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () { btn.textContent = 'selecciona y copia'; });
+        } else {
+          throw new Error('no clipboard api');
+        }
+      } catch (e) {
+        var range = document.createRange();
+        range.selectNodeContents(target);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        btn.textContent = 'seleccionado';
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
