@@ -409,6 +409,15 @@
     color: var(--ink-muted);
   }
 
+  .section-outro {
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+  }
+
   a { color: var(--direct); }
 
   @media (max-width: 460px) {
@@ -583,6 +592,8 @@
     <div class="finding">
       <b>Hallazgo:</b> con el núcleo actual de 10 estudios, ningún dominio supera R1 — ningún hallazgo llega a asociarse formalmente al desenlace clínico (R2) ni a un análisis de mediación (R3). D1, D3 y D5 están completamente vacíos. Toda la evidencia de D2 es además sistémica (C4), no hay ningún dato de inflamación medido en el nervio, la piel o el DRG.
     </div>
+
+    <p class="section-outro">Esta página es el material de apoyo de una <i>scoping review</i> sobre biomarcadores periféricos en intervenciones de ejercicio terapéutico para la neuropatía inducida por quimioterapia (CIPN). Los tres ejes de esta sección son el sistema de codificación con el que se clasificó cada hallazgo de los 10 estudios incluidos.</p>
   </section>
 
   <!-- ================= SECCIÓN 2: ECUACIONES ================= -->
@@ -638,6 +649,8 @@
     </details>
 
     <p class="note" style="margin-top:16px">Complementado con rastreo de citas hacia adelante/atrás de 5 artículos de referencia (49 registros). Tras deduplicar: 1.348 → <b>1.199 registros únicos</b> (149 duplicados eliminados).</p>
+
+    <p class="section-outro">Estas son las tres ecuaciones que se ejecutaron en PubMed y Cochrane Library para localizar los estudios de la revisión, agrupadas por bloques según qué intersección de conceptos buscaban (ejercicio, dominios biológicos, o mediación formal).</p>
   </section>
 
   <!-- ================= SECCIÓN 3: PRISMA ================= -->
@@ -645,7 +658,7 @@
     <h2>Diagrama de flujo PRISMA-ScR</h2>
     <p class="lead">Cubre únicamente el núcleo (Nivel 1); la revisión lateral, no sistemática, queda fuera por definición.</p>
     <div class="diagram-wrap">
-<pre class="mermaid">
+<pre class="mermaid" id="prisma-diagram">
 flowchart TD
     A["Registros identificados mediante búsqueda en bases de datos&lt;br/&gt;PubMed + Cochrane, Bloques A/B/C (708+589+2)&lt;br/&gt;&lt;b&gt;n = 1.299&lt;/b&gt;"] --> C
     B["Registros identificados mediante otras fuentes&lt;br/&gt;Rastreo de citas de 5 artículos de referencia&lt;br/&gt;&lt;b&gt;n = 49&lt;/b&gt;"] --> C
@@ -659,39 +672,45 @@ flowchart TD
 </pre>
     </div>
     <p class="note">Un CSV compatible con la herramienta oficial de generación de diagramas PRISMA 2020 (paquete R <span style="font-family:'IBM Plex Mono',monospace">PRISMA2020</span>) reproduce las mismas cifras y terminología, con la estructura de cajas más granular de la plantilla oficial.</p>
+
+    <p class="section-outro">Este diagrama resume el proceso de cribado completo: desde los registros identificados en las búsquedas hasta los 10 estudios finalmente incluidos en la revisión, con el número de registros excluidos en cada etapa y el motivo.</p>
   </section>
 
   <!-- ================= SECCIÓN 4: BIBLIOGRAFÍA ================= -->
   <section class="panel" id="panel-biblio">
-    <h2>Bibliografía recomendada</h2>
-    <p class="lead">El núcleo de la revisión son 10 estudios incluidos; la bibliografía normativa del resumen y del póster se limita, por decisión editorial, a los 8 de ellos citados en el texto de Resultados. Estas 5 referencias adicionales dan el contexto que el Comité Científico pidió respaldar — prevalencia, tratamiento farmacológico, marco conceptual del campo, riesgo de alcance central y la extensión metodológica PRISMA-ScR — sin ocupar espacio en el póster.</p>
+    <h2>Bibliografía</h2>
+    <p class="lead">Los 10 estudios que forman el núcleo de la revisión, seguidos de una selección complementaria de literatura reciente y de contexto (prevalencia, tratamiento farmacológico, marco conceptual del campo, y revisiones afines) que no forma parte del núcleo pero ayuda a situarlo.</p>
 
+    <h3>Núcleo incluido (10 estudios)</h3>
     <ol class="biblio">
-      <li>
-        <span class="num">1</span>
-        <span class="ref-text">Seretny M, Currie GL, Sena ES, Ramnarine S, Grant R, MacLeod MR, et al. Incidence, prevalence, and predictors of chemotherapy-induced peripheral neuropathy: a systematic review and meta-analysis. Pain. 2014;155(12):2461-70.<br><a class="doi" href="https://doi.org/10.1016/j.pain.2014.09.020" target="_blank" rel="noopener">doi.org/10.1016/j.pain.2014.09.020</a></span>
-      </li>
-      <li>
-        <span class="num">2</span>
-        <span class="ref-text">Loprinzi CL, Lacchetti C, Bleeker J, Cavaletti G, Chauhan C, Hertz DL, et al. Prevention and Management of Chemotherapy-Induced Peripheral Neuropathy in Survivors of Adult Cancers: ASCO Guideline Update. J Clin Oncol. 2020;38(28):3325-48.<br><a class="doi" href="https://doi.org/10.1200/JCO.20.01399" target="_blank" rel="noopener">doi.org/10.1200/JCO.20.01399</a></span>
-      </li>
-      <li>
-        <span class="num">3</span>
-        <span class="ref-text">Chung KH, Park SB, Streckmann F, Wiskemann J, Mohile N, Kleckner AS, et al. Mechanisms, Mediators, and Moderators of the Effects of Exercise on Chemotherapy-Induced Peripheral Neuropathy. Cancers (Basel). 2022;14(5):1224.<br><a class="doi" href="https://doi.org/10.3390/cancers14051224" target="_blank" rel="noopener">doi.org/10.3390/cancers14051224</a></span>
-      </li>
-      <li>
-        <span class="num">4</span>
-        <span class="ref-text">Loureiro J, Costa-Pereira JT, Pozza DH, Tavares I. The Power of Movement: How Exercise Influences Chemotherapy-Induced Peripheral Neuropathy. Biomedicines. 2025;13(5):1103.<br><a class="doi" href="https://doi.org/10.3390/biomedicines13051103" target="_blank" rel="noopener">doi.org/10.3390/biomedicines13051103</a></span>
-      </li>
-      <li>
-        <span class="num">5</span>
-        <span class="ref-text">Tricco AC, Lillie E, Zarin W, O'Brien KK, Colquhoun H, Levac D, et al. PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation. Ann Intern Med. 2018;169(7):467-73.<br><a class="doi" href="https://doi.org/10.7326/M18-0850" target="_blank" rel="noopener">doi.org/10.7326/M18-0850</a></span>
-      </li>
+      <li><span class="num">1</span><span class="ref-text">Park JS, Kim S, Hoke A. An exercise regimen prevents development of paclitaxel-induced peripheral neuropathy in a mouse model. J Peripher Nerv Syst. 2015;20(1):7-14.<br><a class="doi" href="https://doi.org/10.1111/jns.12109" target="_blank" rel="noopener">doi.org/10.1111/jns.12109</a></span></li>
+      <li><span class="num">2</span><span class="ref-text">Sekaran M, Pai A, Prabhu AN, Vasudeva Bhat K, Channaveera C. Efficacy of Exercise on Severity of Paclitaxel-Induced Peripheral Neuropathy and Improving Quality of Life in Women with Non-metastatic Breast Cancer: Results of an Interim Analysis from an Ongoing Randomized Clinical Trial (ExPIN Trial). Integr Cancer Ther. 2025;24.<br><a class="doi" href="https://doi.org/10.1177/15347354251398002" target="_blank" rel="noopener">doi.org/10.1177/15347354251398002</a></span></li>
+      <li><span class="num">3</span><span class="ref-text">McCrary JM, Goldstein D, Sandler CX, Barry BK, Marthick M, Timmins HC, et al. Exercise-based rehabilitation for cancer survivors with chemotherapy-induced peripheral neuropathy. Support Care Cancer. 2019;27(10):3849-57.<br><a class="doi" href="https://doi.org/10.1007/s00520-019-04680-w" target="_blank" rel="noopener">doi.org/10.1007/s00520-019-04680-w</a></span></li>
+      <li><span class="num">4</span><span class="ref-text">Streckmann F, Lehmann HC, Balke M, Schenk A, Oberste M, Heller A, et al. Sensorimotor training and whole-body vibration training have the potential to reduce motor and sensory symptoms of chemotherapy-induced peripheral neuropathy — a randomized controlled pilot trial. Support Care Cancer. 2019;27(7):2471-8.<br><a class="doi" href="https://doi.org/10.1007/s00520-018-4531-4" target="_blank" rel="noopener">doi.org/10.1007/s00520-018-4531-4</a></span></li>
+      <li><span class="num">5</span><span class="ref-text">Galantino ML, Tiger R, Brooks J, Jang S, Wilson K. Impact of Somatic Yoga and Meditation on Fall Risk, Function, and Quality of Life for Chemotherapy-Induced Peripheral Neuropathy Syndrome in Cancer Survivors. Integr Cancer Ther. 2019;18:1534735419850627.<br><a class="doi" href="https://doi.org/10.1177/1534735419850627" target="_blank" rel="noopener">doi.org/10.1177/1534735419850627</a></span></li>
+      <li><span class="num">6</span><span class="ref-text">Martín-Sánchez C, Polo-Ferrero L, Méndez-Sánchez R, Puente-González AS, Manso-Hierro T, José-Fernández-Rodríguez E, et al. 8- versus 12-week supervised resistance training with home-based physical activity during colorectal cancer treatment: a pilot randomized dose-comparison trial. BMC Cancer. 2026;26(1):924.<br><a class="doi" href="https://doi.org/10.1186/s12885-026-16245-2" target="_blank" rel="noopener">doi.org/10.1186/s12885-026-16245-2</a></span></li>
+      <li><span class="num">7</span><span class="ref-text">Viganò M, Kubal S, Lu Y, Habib S, Samarani S, Cama G, et al. Impact of Cannabidiol and Exercise on Clinical Outcomes and Gut Microbiota for Chemotherapy-Induced Peripheral Neuropathy in Cancer Survivors: A Case Report. Pharmaceuticals. 2024;17(7):834.<br><a class="doi" href="https://doi.org/10.3390/ph17070834" target="_blank" rel="noopener">doi.org/10.3390/ph17070834</a></span></li>
+      <li><span class="num">8</span><span class="ref-text">Lees JG, Abdulla M, Barkl-Luke ME, Livni L, Keating BA, Hayes J, et al. Effect of exercise on neuromuscular toxicity in oxaliplatin-treated mice. Muscle Nerve. 2021;64(2):225-34.<br><a class="doi" href="https://doi.org/10.1002/mus.27329" target="_blank" rel="noopener">doi.org/10.1002/mus.27329</a></span></li>
+      <li><span class="num">9</span><span class="ref-text">Dhawan S, Andrews R, Kumar L, Wadhwa S, Shukla G. A Randomized Controlled Trial to Assess the Effectiveness of Muscle Strengthening and Balancing Exercises on Chemotherapy-Induced Peripheral Neuropathic Pain and Quality of Life Among Cancer Patients. Cancer Nurs. 2020;43(4):269-80.<br><a class="doi" href="https://doi.org/10.1097/NCC.0000000000000693" target="_blank" rel="noopener">doi.org/10.1097/NCC.0000000000000693</a></span></li>
+      <li><span class="num">10</span><span class="ref-text">Yu X, Fan Y, Zhang S, Zhou L, Liu J, Du A. Combined Compression and Exercise Therapy for Chemotherapy-Induced Peripheral Neuropathy in Breast Cancer: A Randomized Controlled Trial. Clin Breast Cancer. 2026;26(1):105-13.<br><a class="doi" href="https://doi.org/10.1016/j.clbc.2025.11.013" target="_blank" rel="noopener">doi.org/10.1016/j.clbc.2025.11.013</a></span></li>
     </ol>
+
+    <h3>Bibliografía complementaria (contexto, fuera del núcleo)</h3>
+    <p class="note">No se cribaron ni se extrajeron con la metodología de la revisión — se listan como lectura de contexto y trabajo relacionado.</p>
+    <ol class="biblio" id="biblio-complementaria" start="11">
+      <li><span class="num">11</span><span class="ref-text">Seretny M, Currie GL, Sena ES, Ramnarine S, Grant R, MacLeod MR, et al. Incidence, prevalence, and predictors of chemotherapy-induced peripheral neuropathy: a systematic review and meta-analysis. Pain. 2014;155(12):2461-70.<br><a class="doi" href="https://doi.org/10.1016/j.pain.2014.09.020" target="_blank" rel="noopener">doi.org/10.1016/j.pain.2014.09.020</a></span></li>
+      <li><span class="num">12</span><span class="ref-text">Loprinzi CL, Lacchetti C, Bleeker J, Cavaletti G, Chauhan C, Hertz DL, et al. Prevention and Management of Chemotherapy-Induced Peripheral Neuropathy in Survivors of Adult Cancers: ASCO Guideline Update. J Clin Oncol. 2020;38(28):3325-48.<br><a class="doi" href="https://doi.org/10.1200/JCO.20.01399" target="_blank" rel="noopener">doi.org/10.1200/JCO.20.01399</a></span></li>
+      <li><span class="num">13</span><span class="ref-text">Chung KH, Park SB, Streckmann F, Wiskemann J, Mohile N, Kleckner AS, et al. Mechanisms, Mediators, and Moderators of the Effects of Exercise on Chemotherapy-Induced Peripheral Neuropathy. Cancers (Basel). 2022;14(5):1224.<br><a class="doi" href="https://doi.org/10.3390/cancers14051224" target="_blank" rel="noopener">doi.org/10.3390/cancers14051224</a></span></li>
+      <li><span class="num">14</span><span class="ref-text">Loureiro J, Costa-Pereira JT, Pozza DH, Tavares I. The Power of Movement: How Exercise Influences Chemotherapy-Induced Peripheral Neuropathy. Biomedicines. 2025;13(5):1103.<br><a class="doi" href="https://doi.org/10.3390/biomedicines13051103" target="_blank" rel="noopener">doi.org/10.3390/biomedicines13051103</a></span></li>
+      <li><span class="num">15</span><span class="ref-text">Tricco AC, Lillie E, Zarin W, O'Brien KK, Colquhoun H, Levac D, et al. PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation. Ann Intern Med. 2018;169(7):467-73.<br><a class="doi" href="https://doi.org/10.7326/M18-0850" target="_blank" rel="noopener">doi.org/10.7326/M18-0850</a></span></li>
+    </ol>
+    <p class="note" id="biblio-pending">Ampliando esta lista con literatura reciente adicional — en proceso de verificación contra PubMed.</p>
+
+    <p class="section-outro">Esta bibliografía respalda el marco conceptual, la prevalencia del problema y el estado del campo más allá de lo que cabe en el resumen normativo del póster.</p>
   </section>
 
   <footer>
-    Material suplementario del resumen presentado en el V Congreso Internacional de Fisioterapia COFISPA 2026. Contenido derivado sin alterar de <span style="font-family:'IBM Plex Mono',monospace">01_Protocolo</span>, <span style="font-family:'IBM Plex Mono',monospace">03_Busqueda_bibliografica</span> y <span style="font-family:'IBM Plex Mono',monospace">04_Cribado_seleccion</span> del proyecto de revisión; cualquier corrección se hace primero en la fuente.
+    Material suplementario del resumen presentado en el V Congreso Internacional de Fisioterapia COFISPA 2026.
   </footer>
 </div>
 
@@ -700,11 +719,23 @@ flowchart TD
 (function () {
   var darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
   mermaid.initialize({
-    startOnLoad: true,
+    startOnLoad: false,
     securityLevel: 'loose',
     theme: darkMedia.matches ? 'dark' : 'default',
     themeVariables: { fontFamily: 'IBM Plex Sans, sans-serif' }
   });
+
+  var diagramRendered = false;
+  function renderDiagramIfNeeded() {
+    if (diagramRendered) return;
+    var node = document.getElementById('prisma-diagram');
+    if (!node) return;
+    diagramRendered = true;
+    mermaid.run({ nodes: [node] }).catch(function (err) {
+      diagramRendered = false;
+      console.error('Error al renderizar el diagrama PRISMA-ScR:', err);
+    });
+  }
 
   var tabs = document.querySelectorAll('nav.tabs button');
   var panels = {
@@ -719,6 +750,7 @@ flowchart TD
       btn.setAttribute('aria-selected', 'true');
       Object.keys(panels).forEach(function (k) { panels[k].removeAttribute('data-active'); });
       panels[btn.dataset.tab].setAttribute('data-active', 'true');
+      if (btn.dataset.tab === 'prisma') renderDiagramIfNeeded();
       window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
     });
   });
