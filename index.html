@@ -7,7 +7,7 @@
 <meta name="description" content="Material suplementario del resumen presentado en el V Congreso Internacional de Fisioterapia COFISPA 2026: codificación de los tres ejes, ecuaciones de búsqueda, diagrama PRISMA-ScR y bibliografía recomendada.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
   :root {
     --paper: #f6f4ee;
@@ -81,9 +81,9 @@
     color-scheme: dark;
   }
 
-  * { box-sizing: border-box; border-radius: 0 !important; }
+  * { box-sizing: border-box; }
   html, body { padding: 0; }
-  img { max-width: 100%; image-rendering: pixelated; }
+  img { max-width: 100%; }
   [hidden] { display: none !important; }
 
   body {
@@ -103,14 +103,14 @@
     padding-block: 8px 48px;
   }
 
-  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-wrap: balance; letter-spacing: -0.01em; }
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; text-wrap: balance; letter-spacing: -0.01em; }
 
   header.top {
     position: sticky;
     top: env(safe-area-inset-top, 0px);
     z-index: 20;
     background: var(--paper);
-    border-bottom: 3px solid var(--ink);
+    border-bottom: 1px solid var(--border);
     padding-top: env(safe-area-inset-top, 0px);
   }
 
@@ -121,16 +121,17 @@
   }
 
   .eyebrow {
-    font-family: 'Press Start 2P', 'IBM Plex Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 0.05em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent);
-    margin: 0 0 8px;
+    margin: 0 0 4px;
   }
 
   h1.title {
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 600;
     margin: 0 0 4px;
     color: var(--ink);
   }
@@ -145,10 +146,11 @@
   nav.tabs {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3px;
-    background: var(--ink);
-    border: 2px solid var(--ink);
-    margin-top: 4px;
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
   }
 
   nav.tabs button {
@@ -156,23 +158,23 @@
     border: none;
     background: var(--paper-raised);
     color: var(--ink-secondary);
-    font-family: 'Press Start 2P', 'IBM Plex Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 0.02em;
-    padding: 12px 3px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 13px 4px;
+    min-height: 44px;
     cursor: pointer;
-    line-height: 1.6;
+    line-height: 1.25;
   }
 
   nav.tabs button[aria-selected="true"] {
-    background: var(--accent);
-    color: var(--accent-ink);
-    box-shadow: inset 3px 3px 0 rgba(0,0,0,.2);
+    background: var(--ink);
+    color: var(--paper);
   }
 
   nav.tabs button:focus-visible {
-    outline: 2px dashed var(--accent);
-    outline-offset: -4px;
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
   }
 
   section.panel { display: none; padding-top: 24px; }
@@ -190,7 +192,7 @@
     font-size: 14px;
   }
 
-  h2 { font-size: 17px; margin: 0 0 6px; text-transform: uppercase; letter-spacing: 0.01em; }
+  h2 { font-size: 19px; margin: 0 0 6px; }
   h3 {
     font-size: 13px;
     font-family: 'IBM Plex Mono', monospace;
@@ -202,7 +204,7 @@
   }
   h3:first-of-type { margin-top: 18px; }
 
-  .table-scroll { overflow-x: auto; border: 2px solid var(--border-strong); }
+  .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; }
   table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
   th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
   thead th {
@@ -226,7 +228,7 @@
     font-size: 12px;
     font-weight: 500;
   }
-  .dot { width: 9px; height: 9px; flex: none; box-shadow: 1px 1px 0 rgba(0,0,0,.25); }
+  .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
   .dot.d1 { background: var(--d1); } .dot.d2 { background: var(--d2); }
   .dot.d3 { background: var(--d3); } .dot.d4 { background: var(--d4); }
   .dot.d5 { background: var(--d5); }
@@ -245,8 +247,9 @@
   table.matrix th.rowhead { text-align: left; }
   table.matrix td.cell {
     font-family: 'IBM Plex Mono', monospace;
-    font-weight: 600;
+    font-weight: 500;
     cursor: default;
+    border-radius: 4px;
   }
   table.matrix td.cell.hit {
     cursor: pointer;
@@ -260,7 +263,8 @@
     margin-top: 10px;
     padding: 10px 12px;
     background: var(--paper-raised);
-    border: 2px solid var(--border-strong);
+    border: 1px solid var(--border);
+    border-radius: 8px;
     font-size: 13px;
     color: var(--ink-secondary);
     min-height: 20px;
@@ -270,8 +274,9 @@
   .finding {
     margin-top: 18px;
     padding: 12px 14px;
-    border: 2px solid var(--ink);
-    box-shadow: 4px 4px 0 var(--accent);
+    border: 1px solid var(--border-strong);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
     font-size: 13.5px;
     background: var(--paper-raised);
   }
@@ -281,7 +286,8 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12.5px;
     background: var(--code-bg);
-    border: 2px solid var(--border-strong);
+    border: 1px solid var(--border);
+    border-radius: 8px;
     padding: 12px 14px;
     line-height: 1.6;
     overflow-x: auto;
@@ -291,9 +297,9 @@
   }
 
   details.block {
-    border: 2px solid var(--ink);
-    box-shadow: 3px 3px 0 var(--border-strong);
-    margin-bottom: 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 10px;
     background: var(--paper-raised);
     overflow: hidden;
   }
@@ -310,12 +316,12 @@
   }
   details.block summary::-webkit-details-marker { display: none; }
   details.block summary .letter {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 10px;
-    color: var(--accent-ink);
-    background: var(--accent);
-    border: 2px solid var(--ink);
-    width: 24px; height: 24px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    width: 22px; height: 22px;
     display: inline-flex; align-items: center; justify-content: center;
     flex: none;
   }
@@ -332,7 +338,8 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
     background: var(--code-bg);
-    border: 2px solid var(--border-strong);
+    border: 1px solid var(--border);
+    border-radius: 6px;
     padding: 10px 42px 10px 12px;
     line-height: 1.6;
     overflow-x: auto;
@@ -344,27 +351,24 @@
     position: absolute;
     top: 12px; right: 6px;
     background: var(--paper-raised);
-    border: 2px solid var(--ink);
-    box-shadow: 2px 2px 0 var(--ink);
+    border: 1px solid var(--border-strong);
     color: var(--ink-secondary);
     font-family: 'IBM Plex Mono', monospace;
-    font-weight: 600;
     font-size: 10px;
     padding: 4px 6px;
+    border-radius: 5px;
     cursor: pointer;
   }
-  .copy-btn:hover { color: var(--ink); }
-  .copy-btn:active {
-    box-shadow: none;
-    transform: translate(2px, 2px);
-  }
+  .copy-btn:hover { color: var(--ink); border-color: var(--ink); }
+  .copy-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
   .meta-row { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--ink-muted); margin-top: 4px; }
   .meta-row b { color: var(--ink-secondary); font-weight: 500; }
 
   /* Mermaid container */
   .diagram-wrap {
     overflow-x: auto;
-    border: 2px solid var(--border-strong);
+    border: 1px solid var(--border);
+    border-radius: 8px;
     background: var(--paper-raised);
     padding: 12px;
   }
@@ -380,12 +384,12 @@
   }
   ol.biblio li:last-child { border-bottom: none; padding-bottom: 0; }
   .num {
-    font-family: 'Press Start 2P', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     color: var(--accent);
-    font-size: 9px;
+    font-size: 13px;
     flex: none;
-    width: 24px;
-    padding-top: 2px;
+    width: 18px;
+    padding-top: 1px;
   }
   .ref-text { font-size: 13.5px; color: var(--ink-secondary); }
   .ref-text .doi {
@@ -395,14 +399,14 @@
     font-size: 12px;
     color: var(--direct);
     text-decoration: none;
-    border-bottom: 2px solid var(--direct);
+    border-bottom: 1px dotted var(--direct);
   }
-  .ref-text .doi:hover { background: var(--direct); color: var(--paper); }
+  .ref-text .doi:hover, .ref-text .doi:focus-visible { border-bottom-style: solid; }
 
   footer {
     margin-top: 36px;
     padding-top: 16px;
-    border-top: 3px solid var(--ink);
+    border-top: 1px solid var(--border);
     font-size: 12px;
     color: var(--ink-muted);
   }
@@ -413,7 +417,7 @@
   .section-outro {
     margin-top: 24px;
     padding-top: 14px;
-    border-top: 2px dashed var(--border-strong);
+    border-top: 1px solid var(--border);
     font-size: 13px;
     font-style: italic;
     color: var(--ink-muted);
@@ -435,10 +439,10 @@
     <h1 class="title">Mecanismos periféricos del ejercicio en CIPN</h1>
     <p class="subtitle">Scoping Review PRISMA-ScR · V Congreso Internacional de Fisioterapia COFISPA 2026 · Alejandro Proy Acosta, Cristina López Camacho</p>
     <nav class="tabs" role="tablist" aria-label="Secciones">
-      <button role="tab" aria-selected="true" data-tab="ejes">Codificación</button>
-      <button role="tab" aria-selected="false" data-tab="ecuaciones">Ecuaciones</button>
-      <button role="tab" aria-selected="false" data-tab="prisma">Diagrama</button>
-      <button role="tab" aria-selected="false" data-tab="biblio">Bibliografía</button>
+      <button role="tab" id="tab-ejes" aria-selected="true" aria-controls="panel-ejes" data-tab="ejes">Codificación</button>
+      <button role="tab" id="tab-ecuaciones" aria-selected="false" aria-controls="panel-ecuaciones" data-tab="ecuaciones">Ecuaciones</button>
+      <button role="tab" id="tab-prisma" aria-selected="false" aria-controls="panel-prisma" data-tab="prisma">Diagrama</button>
+      <button role="tab" id="tab-biblio" aria-selected="false" aria-controls="panel-biblio" data-tab="biblio">Bibliografía</button>
     </nav>
   </div>
 </header>
@@ -446,7 +450,7 @@
 <div class="wrap">
 
   <!-- ================= SECCIÓN 1: EJES ================= -->
-  <section class="panel" data-active="true" id="panel-ejes">
+  <section class="panel" data-active="true" id="panel-ejes" role="tabpanel" aria-labelledby="tab-ejes" tabindex="0">
     <h2>Codificación de los tres ejes</h2>
     <p class="lead">Cada hallazgo del núcleo se codifica en tres ejes independientes — no son tres listas paralelas, sino tres roles que un mismo constructo biológico puede desempeñar a la vez.</p>
     <p class="quote">«A biomarker can be considered a measurement on mechanistic pathways (i.e., a mediator)» — Chung et al. 2022, §5</p>
@@ -454,7 +458,7 @@
     <h3>Eje dominio — contenido biológico</h3>
     <div class="table-scroll">
       <table>
-        <thead><tr><th class="code">Código</th><th>Dominio</th><th>Ejemplos de constructos</th></tr></thead>
+        <thead><tr><th scope="col" class="code">Código</th><th scope="col">Dominio</th><th scope="col">Ejemplos de constructos</th></tr></thead>
         <tbody>
           <tr><td class="code"><span class="chip"><span class="dot d1"></span>D1</span></td><td>Factores neurotróficos</td><td>GDNF, BDNF, IGF-1, NGF</td></tr>
           <tr><td class="code"><span class="chip"><span class="dot d2"></span>D2</span></td><td>Inflamación y citocinas</td><td>IL-1β, IL-10, TNF-α, IFNγ, IL-6, IL-1RA</td></tr>
@@ -468,7 +472,7 @@
     <h3>Eje rol — qué hace el estudio con ese dominio</h3>
     <div class="table-scroll">
       <table>
-        <thead><tr><th class="code">Código</th><th>Rol epistémico</th></tr></thead>
+        <thead><tr><th scope="col" class="code">Código</th><th scope="col">Rol epistémico</th></tr></thead>
         <tbody>
           <tr><td class="code">R0</td><td>Postulado narrativamente, sin medición</td></tr>
           <tr><td class="code">R1</td><td>Medido como resultado mecanístico (cambio biológico, sin vincularlo al síntoma)</td></tr>
@@ -480,7 +484,7 @@
     <p class="note">Marcadores de biomarcador, no excluyentes con R0–R3:</p>
     <div class="table-scroll">
       <table>
-        <thead><tr><th class="code">Código</th><th>Marcador de biomarcador</th></tr></thead>
+        <thead><tr><th scope="col" class="code">Código</th><th scope="col">Marcador de biomarcador</th></tr></thead>
         <tbody>
           <tr><td class="code">B1</td><td>Propuesto como biomarcador</td></tr>
           <tr><td class="code">B2</td><td>Validado analítica o psicométricamente</td></tr>
@@ -492,7 +496,7 @@
     <h3>Eje compartimento — dónde se mide</h3>
     <div class="table-scroll">
       <table>
-        <thead><tr><th class="code">Código</th><th>Compartimento</th><th>Naturaleza</th></tr></thead>
+        <thead><tr><th scope="col" class="code">Código</th><th scope="col">Compartimento</th><th scope="col">Naturaleza</th></tr></thead>
         <tbody>
           <tr><td class="code">C1</td><td>Nervio periférico</td><td>Periférico directo</td></tr>
           <tr><td class="code">C2</td><td>Ganglio de la raíz dorsal (DRG)</td><td>Periférico directo</td></tr>
@@ -510,44 +514,44 @@
       <div class="table-scroll">
         <table class="matrix" id="matrix-rol">
           <thead>
-            <tr><th class="rowhead">Dominio</th><th>R0</th><th>R1</th><th>R2</th><th>R3</th><th>B1</th><th>B2</th><th>B3</th></tr>
+            <tr><th scope="col" class="rowhead">Dominio</th><th scope="col">R0</th><th scope="col">R1</th><th scope="col">R2</th><th scope="col">R3</th><th scope="col">B1</th><th scope="col">B2</th><th scope="col">B3</th></tr>
           </thead>
           <tbody>
             <tr>
-              <th class="rowhead"><span class="chip"><span class="dot d1"></span>D1</span></th>
+              <th class="rowhead" scope="row"><span class="chip"><span class="dot d1"></span>D1</span></th>
               <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
               <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
             </tr>
             <tr>
-              <th class="rowhead"><span class="chip"><span class="dot d2"></span>D2</span></th>
+              <th class="rowhead" scope="row"><span class="chip"><span class="dot d2"></span>D2</span></th>
               <td class="cell zero">0</td>
-              <td class="cell hit" style="background:var(--d2)" tabindex="0" data-detail="D2 · R1 — medido: Martín-Sánchez_2026, Viganò_2024, Galantino_2019*">3</td>
+              <td class="cell hit" style="background:var(--d2)" role="button" tabindex="0" aria-label="D2 · R1 — medido: Martín-Sánchez_2026, Viganò_2024, Galantino_2019*" data-detail="D2 · R1 — medido: Martín-Sánchez_2026, Viganò_2024, Galantino_2019*">3</td>
               <td class="cell zero">0</td><td class="cell zero">0</td>
-              <td class="cell hit" style="background:var(--d2)" tabindex="0" data-detail="D2 · B1 — propuesto como biomarcador: Martín-Sánchez_2026, Viganò_2024, Galantino_2019*">3</td>
+              <td class="cell hit" style="background:var(--d2)" role="button" tabindex="0" aria-label="D2 · B1 — propuesto como biomarcador: Martín-Sánchez_2026, Viganò_2024, Galantino_2019*" data-detail="D2 · B1 — propuesto como biomarcador: Martín-Sánchez_2026, Viganò_2024, Galantino_2019*">3</td>
               <td class="cell zero">0</td><td class="cell zero">0</td>
             </tr>
             <tr>
-              <th class="rowhead"><span class="chip"><span class="dot d3"></span>D3</span></th>
+              <th class="rowhead" scope="row"><span class="chip"><span class="dot d3"></span>D3</span></th>
               <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
               <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
             </tr>
             <tr>
-              <th class="rowhead"><span class="chip"><span class="dot d4"></span>D4</span></th>
+              <th class="rowhead" scope="row"><span class="chip"><span class="dot d4"></span>D4</span></th>
               <td class="cell zero">0</td>
-              <td class="cell hit" style="background:var(--d4)" tabindex="0" data-detail="D4 · R1 — medido: Dhawan_2020†, Park_2015, Sekaran_2025, McCrary_2019, Streckmann_2019">5</td>
+              <td class="cell hit" style="background:var(--d4)" role="button" tabindex="0" aria-label="D4 · R1 — medido: Dhawan_2020†, Park_2015, Sekaran_2025, McCrary_2019, Streckmann_2019" data-detail="D4 · R1 — medido: Dhawan_2020†, Park_2015, Sekaran_2025, McCrary_2019, Streckmann_2019">5</td>
               <td class="cell zero">0</td><td class="cell zero">0</td>
               <td class="cell zero">0</td><td class="cell zero">0</td>
-              <td class="cell hit" style="background:var(--d4)" tabindex="0" data-detail="D4 · B3 — predictor de respuesta a la intervención: Sekaran_2025">1</td>
+              <td class="cell hit" style="background:var(--d4)" role="button" tabindex="0" aria-label="D4 · B3 — predictor de respuesta a la intervención: Sekaran_2025" data-detail="D4 · B3 — predictor de respuesta a la intervención: Sekaran_2025">1</td>
             </tr>
             <tr>
-              <th class="rowhead"><span class="chip"><span class="dot d5"></span>D5</span></th>
+              <th class="rowhead" scope="row"><span class="chip"><span class="dot d5"></span>D5</span></th>
               <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
               <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="detail-box" id="detail-rol">Selecciona una celda con valor para ver los estudios que la componen.</div>
+      <div class="detail-box" id="detail-rol" aria-live="polite">Selecciona una celda con valor para ver los estudios que la componen.</div>
     </div>
     <p class="note">*Galantino_2019 codifica D2 «con reserva» (cortisol salival, no es una citocina clásica). †Dhawan_2020: la conducción nerviosa es solo diagnóstico basal, sin rol real de resultado del ejercicio.</p>
 
@@ -556,38 +560,38 @@
       <div class="table-scroll">
         <table class="matrix" id="matrix-comp">
           <thead>
-            <tr><th class="rowhead">Dominio</th><th>C1 Nervio</th><th>C2 DRG</th><th>C3 Piel/IENF</th><th>C4 Suero</th><th>C5 Músculo</th></tr>
+            <tr><th scope="col" class="rowhead">Dominio</th><th scope="col">C1 Nervio</th><th scope="col">C2 DRG</th><th scope="col">C3 Piel/IENF</th><th scope="col">C4 Suero</th><th scope="col">C5 Músculo</th></tr>
           </thead>
           <tbody>
             <tr>
-              <th class="rowhead"><span class="chip"><span class="dot d1"></span>D1</span></th>
+              <th class="rowhead" scope="row"><span class="chip"><span class="dot d1"></span>D1</span></th>
               <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
             </tr>
             <tr>
-              <th class="rowhead"><span class="chip"><span class="dot d2"></span>D2</span></th>
+              <th class="rowhead" scope="row"><span class="chip"><span class="dot d2"></span>D2</span></th>
               <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
-              <td class="cell hit" style="background:var(--d2)" tabindex="0" data-detail="D2 · C4 (suero/plasma) — sistémico: Martín-Sánchez_2026, Viganò_2024, Galantino_2019*">3</td>
+              <td class="cell hit" style="background:var(--d2)" role="button" tabindex="0" aria-label="D2 · C4 (suero/plasma) — sistémico: Martín-Sánchez_2026, Viganò_2024, Galantino_2019*" data-detail="D2 · C4 (suero/plasma) — sistémico: Martín-Sánchez_2026, Viganò_2024, Galantino_2019*">3</td>
               <td class="cell zero">0</td>
             </tr>
             <tr>
-              <th class="rowhead"><span class="chip"><span class="dot d3"></span>D3</span></th>
+              <th class="rowhead" scope="row"><span class="chip"><span class="dot d3"></span>D3</span></th>
               <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
             </tr>
             <tr>
-              <th class="rowhead"><span class="chip"><span class="dot d4"></span>D4</span></th>
-              <td class="cell hit" style="background:var(--d4)" tabindex="0" data-detail="D4 · C1 (nervio periférico) — directo: Dhawan_2020, Park_2015, Sekaran_2025, McCrary_2019, Streckmann_2019">5</td>
+              <th class="rowhead" scope="row"><span class="chip"><span class="dot d4"></span>D4</span></th>
+              <td class="cell hit" style="background:var(--d4)" role="button" tabindex="0" aria-label="D4 · C1 (nervio periférico) — directo: Dhawan_2020, Park_2015, Sekaran_2025, McCrary_2019, Streckmann_2019" data-detail="D4 · C1 (nervio periférico) — directo: Dhawan_2020, Park_2015, Sekaran_2025, McCrary_2019, Streckmann_2019">5</td>
               <td class="cell zero">0</td>
-              <td class="cell hit" style="background:var(--d4)" tabindex="0" data-detail="D4 · C3 (piel/IENF) — directo: Park_2015">1</td>
+              <td class="cell hit" style="background:var(--d4)" role="button" tabindex="0" aria-label="D4 · C3 (piel/IENF) — directo: Park_2015" data-detail="D4 · C3 (piel/IENF) — directo: Park_2015">1</td>
               <td class="cell zero">0</td><td class="cell zero">0</td>
             </tr>
             <tr>
-              <th class="rowhead"><span class="chip"><span class="dot d5"></span>D5</span></th>
+              <th class="rowhead" scope="row"><span class="chip"><span class="dot d5"></span>D5</span></th>
               <td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="detail-box" id="detail-comp">Selecciona una celda con valor para ver los estudios que la componen.</div>
+      <div class="detail-box" id="detail-comp" aria-live="polite">Selecciona una celda con valor para ver los estudios que la componen.</div>
     </div>
 
     <div class="finding">
@@ -598,7 +602,7 @@
   </section>
 
   <!-- ================= SECCIÓN 2: ECUACIONES ================= -->
-  <section class="panel" id="panel-ecuaciones">
+  <section class="panel" id="panel-ecuaciones" role="tabpanel" aria-labelledby="tab-ecuaciones" tabindex="0">
     <h2>Ecuaciones de búsqueda</h2>
     <p class="lead">PubMed y Cochrane Library, por bloques de intersección. Bloques A y C: 2015–2026. Bloque B: 2021–2026 (el hueco 2015–2020 se cubre con rastreo de citas). Inglés o español en los tres.</p>
 
@@ -630,7 +634,6 @@
           <span><b>Filtros</b> 2021/01/01–2026/08/08 · inglés/español</span>
           <span><b>Registros</b> PubMed 106 + Cochrane 483 = 589</span>
         </div>
-        <p class="note">Sin ancla de compartimento: se probó como filtro y se descartó por excluir evidencia sistémica C4–C5, que el diseño admite como indirecta, no como excluible. La compartimentación se aplica solo en la ficha de extracción.</p>
       </div>
     </details>
 
@@ -654,7 +657,7 @@
   </section>
 
   <!-- ================= SECCIÓN 3: PRISMA ================= -->
-  <section class="panel" id="panel-prisma">
+  <section class="panel" id="panel-prisma" role="tabpanel" aria-labelledby="tab-prisma" tabindex="0">
     <h2>Diagrama de flujo PRISMA-ScR</h2>
     <p class="lead">Cubre únicamente el núcleo (Nivel 1); la revisión lateral, no sistemática, queda fuera por definición.</p>
     <div class="diagram-wrap">
@@ -675,7 +678,7 @@ flowchart TD
   </section>
 
   <!-- ================= SECCIÓN 4: BIBLIOGRAFÍA ================= -->
-  <section class="panel" id="panel-biblio">
+  <section class="panel" id="panel-biblio" role="tabpanel" aria-labelledby="tab-biblio" tabindex="0">
     <h2>Bibliografía</h2>
     <p class="lead">Los 10 estudios que forman el núcleo de la revisión, seguidos de una selección complementaria de literatura reciente y de contexto (prevalencia, tratamiento farmacológico, marco conceptual del campo, y revisiones afines) que no forma parte del núcleo pero ayuda a situarlo.</p>
 
