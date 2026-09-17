@@ -7,7 +7,7 @@
 <meta name="description" content="Material suplementario del resumen presentado en el V Congreso Internacional de Fisioterapia COFISPA 2026: codificación de los tres ejes, ecuaciones de búsqueda, diagrama PRISMA-ScR y bibliografía recomendada.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
 
   :root {
     --paper: #f6f4ee;
@@ -81,9 +81,9 @@
     color-scheme: dark;
   }
 
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; border-radius: 0 !important; }
   html, body { padding: 0; }
-  img { max-width: 100%; }
+  img { max-width: 100%; image-rendering: pixelated; }
   [hidden] { display: none !important; }
 
   body {
@@ -103,14 +103,14 @@
     padding-block: 8px 48px;
   }
 
-  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; text-wrap: balance; letter-spacing: -0.01em; }
+  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-wrap: balance; letter-spacing: -0.01em; }
 
   header.top {
     position: sticky;
     top: env(safe-area-inset-top, 0px);
     z-index: 20;
     background: var(--paper);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 3px solid var(--ink);
     padding-top: env(safe-area-inset-top, 0px);
   }
 
@@ -121,17 +121,16 @@
   }
 
   .eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.08em;
+    font-family: 'Press Start 2P', 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--accent);
-    margin: 0 0 4px;
+    margin: 0 0 8px;
   }
 
   h1.title {
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 20px;
     margin: 0 0 4px;
     color: var(--ink);
   }
@@ -146,11 +145,10 @@
   nav.tabs {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 8px 8px 0 0;
-    overflow: hidden;
+    gap: 3px;
+    background: var(--ink);
+    border: 2px solid var(--ink);
+    margin-top: 4px;
   }
 
   nav.tabs button {
@@ -158,22 +156,23 @@
     border: none;
     background: var(--paper-raised);
     color: var(--ink-secondary);
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 12.5px;
-    font-weight: 500;
-    padding: 10px 4px;
+    font-family: 'Press Start 2P', 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.02em;
+    padding: 12px 3px;
     cursor: pointer;
-    line-height: 1.25;
+    line-height: 1.6;
   }
 
   nav.tabs button[aria-selected="true"] {
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--accent);
+    color: var(--accent-ink);
+    box-shadow: inset 3px 3px 0 rgba(0,0,0,.2);
   }
 
   nav.tabs button:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: -2px;
+    outline: 2px dashed var(--accent);
+    outline-offset: -4px;
   }
 
   section.panel { display: none; padding-top: 24px; }
@@ -191,7 +190,7 @@
     font-size: 14px;
   }
 
-  h2 { font-size: 19px; margin: 0 0 6px; }
+  h2 { font-size: 17px; margin: 0 0 6px; text-transform: uppercase; letter-spacing: 0.01em; }
   h3 {
     font-size: 13px;
     font-family: 'IBM Plex Mono', monospace;
@@ -203,7 +202,7 @@
   }
   h3:first-of-type { margin-top: 18px; }
 
-  .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; }
+  .table-scroll { overflow-x: auto; border: 2px solid var(--border-strong); }
   table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
   th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
   thead th {
@@ -227,7 +226,7 @@
     font-size: 12px;
     font-weight: 500;
   }
-  .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .dot { width: 9px; height: 9px; flex: none; box-shadow: 1px 1px 0 rgba(0,0,0,.25); }
   .dot.d1 { background: var(--d1); } .dot.d2 { background: var(--d2); }
   .dot.d3 { background: var(--d3); } .dot.d4 { background: var(--d4); }
   .dot.d5 { background: var(--d5); }
@@ -246,9 +245,8 @@
   table.matrix th.rowhead { text-align: left; }
   table.matrix td.cell {
     font-family: 'IBM Plex Mono', monospace;
-    font-weight: 500;
+    font-weight: 600;
     cursor: default;
-    border-radius: 4px;
   }
   table.matrix td.cell.hit {
     cursor: pointer;
@@ -262,8 +260,7 @@
     margin-top: 10px;
     padding: 10px 12px;
     background: var(--paper-raised);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    border: 2px solid var(--border-strong);
     font-size: 13px;
     color: var(--ink-secondary);
     min-height: 20px;
@@ -273,9 +270,8 @@
   .finding {
     margin-top: 18px;
     padding: 12px 14px;
-    border: 1px solid var(--border-strong);
-    border-left: 3px solid var(--accent);
-    border-radius: 6px;
+    border: 2px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--accent);
     font-size: 13.5px;
     background: var(--paper-raised);
   }
@@ -285,8 +281,7 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12.5px;
     background: var(--code-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    border: 2px solid var(--border-strong);
     padding: 12px 14px;
     line-height: 1.6;
     overflow-x: auto;
@@ -296,9 +291,9 @@
   }
 
   details.block {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    margin-bottom: 10px;
+    border: 2px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--border-strong);
+    margin-bottom: 14px;
     background: var(--paper-raised);
     overflow: hidden;
   }
@@ -315,12 +310,12 @@
   }
   details.block summary::-webkit-details-marker { display: none; }
   details.block summary .letter {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    border-radius: 5px;
-    width: 22px; height: 22px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    color: var(--accent-ink);
+    background: var(--accent);
+    border: 2px solid var(--ink);
+    width: 24px; height: 24px;
     display: inline-flex; align-items: center; justify-content: center;
     flex: none;
   }
@@ -337,8 +332,7 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
     background: var(--code-bg);
-    border: 1px solid var(--border);
-    border-radius: 6px;
+    border: 2px solid var(--border-strong);
     padding: 10px 42px 10px 12px;
     line-height: 1.6;
     overflow-x: auto;
@@ -350,23 +344,27 @@
     position: absolute;
     top: 12px; right: 6px;
     background: var(--paper-raised);
-    border: 1px solid var(--border-strong);
+    border: 2px solid var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
     color: var(--ink-secondary);
     font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
     font-size: 10px;
     padding: 4px 6px;
-    border-radius: 5px;
     cursor: pointer;
   }
-  .copy-btn:hover { color: var(--ink); border-color: var(--ink); }
+  .copy-btn:hover { color: var(--ink); }
+  .copy-btn:active {
+    box-shadow: none;
+    transform: translate(2px, 2px);
+  }
   .meta-row { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--ink-muted); margin-top: 4px; }
   .meta-row b { color: var(--ink-secondary); font-weight: 500; }
 
   /* Mermaid container */
   .diagram-wrap {
     overflow-x: auto;
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    border: 2px solid var(--border-strong);
     background: var(--paper-raised);
     padding: 12px;
   }
@@ -382,12 +380,12 @@
   }
   ol.biblio li:last-child { border-bottom: none; padding-bottom: 0; }
   .num {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Press Start 2P', monospace;
     color: var(--accent);
-    font-size: 13px;
+    font-size: 9px;
     flex: none;
-    width: 18px;
-    padding-top: 1px;
+    width: 24px;
+    padding-top: 2px;
   }
   .ref-text { font-size: 13.5px; color: var(--ink-secondary); }
   .ref-text .doi {
@@ -397,22 +395,25 @@
     font-size: 12px;
     color: var(--direct);
     text-decoration: none;
-    border-bottom: 1px dotted var(--direct);
+    border-bottom: 2px solid var(--direct);
   }
-  .ref-text .doi:hover { border-bottom-style: solid; }
+  .ref-text .doi:hover { background: var(--direct); color: var(--paper); }
 
   footer {
     margin-top: 36px;
     padding-top: 16px;
-    border-top: 1px solid var(--border);
+    border-top: 3px solid var(--ink);
     font-size: 12px;
     color: var(--ink-muted);
   }
+  footer p { margin: 0 0 6px; color: inherit; }
+  footer .contact { font-family: 'IBM Plex Mono', monospace; }
+  footer .contact a { color: var(--accent); font-weight: 600; }
 
   .section-outro {
     margin-top: 24px;
     padding-top: 14px;
-    border-top: 1px solid var(--border);
+    border-top: 2px dashed var(--border-strong);
     font-size: 13px;
     font-style: italic;
     color: var(--ink-muted);
@@ -644,7 +645,6 @@
           <span><b>Filtros</b> sin restricción de fecha · inglés/español</span>
           <span><b>Registros</b> PubMed 2 + Cochrane 0 = 2</span>
         </div>
-        <p class="note">Ecuación deliberadamente estrecha, usada como sonda de R3. Los 2 registros brutos son falsos positivos tras cribado manual — confirma formalmente <b>R3 = 0</b>, el hallazgo principal previsto de la revisión.</p>
       </div>
     </details>
 
@@ -671,8 +671,6 @@ flowchart TD
     H["Estudios incluidos en la scoping review&lt;br/&gt;&lt;b&gt;n = 10&lt;/b&gt;"]
 </pre>
     </div>
-    <p class="note">Un CSV compatible con la herramienta oficial de generación de diagramas PRISMA 2020 (paquete R <span style="font-family:'IBM Plex Mono',monospace">PRISMA2020</span>) reproduce las mismas cifras y terminología, con la estructura de cajas más granular de la plantilla oficial.</p>
-
     <p class="section-outro">Este diagrama resume el proceso de cribado completo: desde los registros identificados en las búsquedas hasta los 10 estudios finalmente incluidos en la revisión, con el número de registros excluidos en cada etapa y el motivo.</p>
   </section>
 
@@ -750,7 +748,8 @@ flowchart TD
   </section>
 
   <footer>
-    Material suplementario del resumen presentado en el V Congreso Internacional de Fisioterapia COFISPA 2026.
+    <p>Material suplementario del resumen presentado en el V Congreso Internacional de Fisioterapia COFISPA 2026.</p>
+    <p class="contact">Contacto: <a href="mailto:alejandro.proy@gmail.com">alejandro.proy@gmail.com</a></p>
   </footer>
 </div>
 
